@@ -1,7 +1,11 @@
-#include <windows.h>
+﻿#include <windows.h>
 #include <tlhelp32.h>
 #include <iostream>
 #include <string>
+#include <mmsystem.h>
+#include "resource.h"
+#pragma comment(lib, "winmm.lib") // Link against the Windows multimedia library
+
 
 // Global variables
 bool isF3Pressed = false;  // Tracks whether "F3" key was pressed
@@ -124,6 +128,10 @@ void CreateOverlayWindow(HINSTANCE hInstance, HWND targetWindow) {
 
 // Main function
 int main() {
+    // Hide the console window
+    HWND hwndConsole = GetConsoleWindow();
+    ShowWindow(hwndConsole, SW_HIDE);
+    
     const std::wstring exeName = L"Stalker2-Win64-Shipping.exe"; // Replace with your target .exe name
     DWORD processId = FindProcessIdByExeName(exeName);
 
@@ -167,12 +175,16 @@ int main() {
                 isF3Pressed = true;
 
                 if (isRunning) {
+                    // Play "start.wav" when turning off
+                    PlaySound(MAKEINTRESOURCE(IDR_WAVE2), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
                     // Stop running by releasing "W"
                     std::cout << "Stopping movement (Releasing W)" << std::endl;
                     SimulateKeyPress('W', false);  // Release 'W'
                     isRunning = false;
                 }
                 else {
+                    // Play "start.wav" when turning on
+                    PlaySound(MAKEINTRESOURCE(IDR_WAVE1), GetModuleHandle(NULL), SND_RESOURCE | SND_ASYNC);
                     // Start running by holding "W"
                     std::cout << "Starting movement (Pressing W)" << std::endl;
                     SimulateKeyPress('W', true);  // Press 'W'
