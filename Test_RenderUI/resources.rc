@@ -14,20 +14,20 @@
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
-    "resource.h\0"
+"resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
-    "\0"
+"\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
-    "\r\n"
-    "\0"
+"\r\n"
+"\0"
 END
 
 #endif    // APSTUDIO_INVOKED
@@ -38,9 +38,9 @@ END
 // WAVE
 //
 
-IDR_WAVE1               WAVE                    "hello.wav"
+HELLO_WAVE               WAVE                    "hello.wav"
 
-IDR_WAVE2               WAVE                    "bye.wav"
+BYE_WAVE               WAVE                    "bye.wav"
 
 #endif    // English (United States) resources
 /////////////////////////////////////////////////////////////////////////////

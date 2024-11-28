@@ -2,8 +2,8 @@
 // Microsoft Visual C++ generated include file.
 // Used by resources.rc
 //
-#define IDR_WAVE1                       101
-#define IDR_WAVE2                       102
+#define HELLO_WAVE                       101
+#define BYE_WAVE                       102
 
 // Next default values for new objects
 // 
