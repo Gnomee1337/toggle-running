@@ -1,4 +1,4 @@
-# movement-test
+# Toggle-running
 A Windows C++ utility that simulates keyboard input (specifically toggling the "W" key for movement) in a target game window, with an on-screen overlay and sound feedback. Designed for games like "Stalker2-Win64-Shipping.exe".
 
 # Features
